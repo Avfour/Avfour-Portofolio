@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#080808" />
+  <meta name="description" content="Support Avfour and keep the creative work going with a small donation." />
+  <title>Support Avfour</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Space+Mono&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <div class="support-page">
+
+    <div class="blob b1"></div>
+    <div class="blob b2"></div>
+    <div class="blob b3"></div>
+    <div class="blob b4"></div>
+
+   <a href="index.html#hero" class="support-back" id="backBtn" aria-label="Back to home">← Back</a>
+
+    <div class="support-inner">
+      <p class="support-eyebrow">Support</p>
+      <h1 class="support-title">Buy me a coffee.</h1>
+      <p class="support-sub">Your support means everything and keeps the work going.</p>
+      <div class="support-barcode-wrap">
+        <img src="assets/barcode.png" alt="Donate barcode for Avfour" class="support-barcode" loading="lazy" />
+      </div>
+      <p class="support-note">Scan the code above to donate</p>
+      <p class="support-dana">Dana only</p>
+    </div>
+
+  </div>
+
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <script>
+    const cursorDot = document.getElementById('cursorDot');
+    const cursorRing = document.getElementById('cursorRing');
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth <= 768;
+
+    if (!isMobile && cursorDot && cursorRing) {
+      let ringX = 0, ringY = 0, dotX = 0, dotY = 0;
+
+      window.addEventListener('mousemove', (e) => {
+        dotX = e.clientX;
+        dotY = e.clientY;
+        cursorDot.style.left = dotX + 'px';
+        cursorDot.style.top = dotY + 'px';
+        cursorDot.style.opacity = '1';
+        cursorRing.style.opacity = '0.5';
+      }, true);
+
+      function animateRing() {
+        ringX += (dotX - ringX) * 0.12;
+        ringY += (dotY - ringY) * 0.12;
+        cursorRing.style.left = ringX + 'px';
+        cursorRing.style.top = ringY + 'px';
+        requestAnimationFrame(animateRing);
+      }
+      animateRing();
+
+      document.querySelectorAll('a, button').forEach(el => {
+        el.addEventListener('mouseenter', () => cursorRing.classList.add('hover'));
+        el.addEventListener('mouseleave', () => cursorRing.classList.remove('hover'));
+      });
+    } else {
+      if (cursorDot) cursorDot.style.display = 'none';
+      if (cursorRing) cursorRing.style.display = 'none';
+    }
+  </script>
+
+</body>
+</html>

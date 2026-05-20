@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#080808" />
+  <title>Avfour</title>
+  <meta name="description" content="Avfour — Visual creator from Indonesia. 16 Designs • 19 Photographs • 1 Project" />
+  <meta property="og:title" content="Avfour" />
+  <meta property="og:description" content="Visual Creator from Indonesia | 16 Designs • 19 Photographs • 1 Project" />
+  <meta property="og:image" content="assets/home-bg.jpg" />
+  <meta property="og:image:alt" content="Avfour - Visual Creator Portfolio" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://avfour.com" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Avfour" />
+  <meta name="twitter:description" content="Visual Creator from Indonesia | 16 Designs • 19 Photographs • 1 Project" />
+  <meta name="twitter:image" content="assets/home-bg.jpg" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Space+Mono&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- LOADING SCREEN -->
+    <div class="loader" id="loader">
+      <div class="loader-inner">
+        <p class="loader-name">Avfour</p>
+        <div class="loader-bar-wrap">
+          <div class="loader-bar" id="loaderBar"></div>
+        </div>
+        <p class="loader-percent" id="loaderPercent">0</p>
+      </div>
+    </div>
+
+  <div class="prologue" id="prologue">
+
+    <canvas id="liquidCanvas"></canvas>
+
+    <div class="glass-surface"></div>
+
+    <div class="prologue-content">
+      <p class="eyebrow">Avfour &nbsp;·&nbsp; Archive</p>
+
+      <h1 class="prologue-title">
+        Some never stop.<br>
+        This is the beginning.<br>
+        To always be better.
+      </h1>
+
+      <p class="prologue-tagline">— Avfour</p>
+
+      <button class="enter-btn" id="enterBtn" type="button" aria-label="Enter site">Enter</button>
+    </div>
+
+    <div class="line-left"></div>
+    <div class="line-right"></div>
+
+  </div>
+
+  <!-- MAIN WEB -->
+  <div class="main-web" id="mainWeb">
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+      <div class="nav-logo">
+        <img src="assets/logo.png" alt="Avfour Logo" class="nav-logo-img" />
+        <span>Avfour</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#portfolio">Works</a></li>
+        <li><a href="#projects">Projects</a></li>
+      </ul>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="hero" style="background-image: url('assets/home-bg.jpg');">
+      <div class="hero-content">
+        <p class="hero-eyebrow">Visual Creator · Indonesia</p>
+        <h1 class="hero-title">Avfour</h1>
+        <p class="hero-sub">Design. Photography. Editing.</p>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <span class="stat-num">16</span>
+            <span class="stat-label">Designs</span>
+          </div>
+          <div class="hero-divider"></div>
+          <div class="hero-stat">
+            <span class="stat-num">19</span>
+            <span class="stat-label">Photographs</span>
+          </div>
+          <div class="hero-divider"></div>
+          <div class="hero-stat">
+            <span class="stat-num">1</span>
+            <span class="stat-label">Projects</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-scroll-hint">
+        <span>Scroll</span>
+        <div class="scroll-line"></div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ABOUT SECTION -->
+<section class="about" id="about">
+      <div class="about-inner">
+        <div class="about-profile-wrap">
+          <img src="assets/profile.jpg" alt="Avfour" class="about-profile-img" />
+          <div class="about-profile-card">
+            <p class="section-label">About</p>
+            <h2 class="section-title">The person behind the work.</h2>
+          </div>
+        </div>
+        <p class="about-bio">I create because I can't stop improving. Design, photography, and editing — this is how I document the journey.</p>
+        <div class="about-tags">
+          <span class="tag">Graphic Design</span>
+          <span class="tag">Photography</span>
+          <span class="tag">Motion Graphics</span>
+          <span class="tag">Code Projects</span>
+          <span class="tag">Wording</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- PORTFOLIO SECTION -->
+    <section class="portfolio" id="portfolio">
+      <div class="portfolio-header">
+        <p class="section-label">Works</p>
+        <h2 class="section-title">Selected pieces.</h2>
+        <div class="portfolio-filter">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="design">Design</button>
+          <button class="filter-btn" data-filter="design2">Design 2.0</button>
+          <button class="filter-btn" data-filter="photograph">Photograph</button>
+        </div>
+      </div>
+      <div class="portfolio-folders">
+
+   <!-- FOLDER: Graphic Design -->
+  <div class="folder" data-folder="design">
+    <div class="folder-header" role="button" tabindex="0" aria-expanded="false">
+      <div class="folder-header-left">
+        <span class="folder-icon">▶</span>
+        <span class="folder-title">Graphic Design</span>
+      </div>
+      <span class="folder-count">9 items</span>
+    </div>
+    <div class="masonry-grid folder-grid" id="grid-design">
+      <div class="masonry-item" data-category="design"><img src="assets/design1.jpg" alt="Design 1" /><div class="item-overlay"><span>Graphic Design</span></div></div>
+      <div class="masonry-item" data-category="design"><img src="assets/design2.jpg" alt="Design 2" /><div class="item-overlay"><span>Graphic Design</span></div></div>
+      <div class="masonry-item" data-category="design"><img src="assets/design3.jpg" alt="Design 3" /><div class="item-overlay"><span>Graphic Design</span></div></div>
+      <div class="masonry-item" data-category="design"><img src="assets/design4.jpg" alt="Design 4" /><div class="item-overlay"><span>Graphic Design</span></div></div>
+      <div class="masonry-item" data-category="design"><img src="assets/design5.jpg" alt="Design 5" /><div class="item-overlay"><span>Graphic Design</span></div></div>
+      <div class="masonry-item" data-category="design"><img src="assets/design6.jpg" alt="Design 6" /><div class="item-overlay"><span>Graphic Design</span></div></div>
+      <div class="masonry-item" data-category="design"><img src="assets/design7.jpg" alt="Design 7" /><div class="item-overlay"><span>Graphic Design</span></div></div>
+      <div class="masonry-item" data-category="design"><img src="assets/design8.jpg" alt="Design 8" /><div class="item-overlay"><span>Graphic Design</span></div></div>
+      <div class="masonry-item" data-category="design"><img src="assets/design9.jpg" alt="Design 9" /><div class="item-overlay"><span>Graphic Design</span></div></div>
+    </div>
+  </div>
+  
+        <!-- FOLDER: Design 2.0 -->
+  <div class="folder" data-folder="design2">
+    <div class="folder-header" role="button" tabindex="0" aria-expanded="false">
+      <div class="folder-header-left">
+        <span class="folder-icon">▶</span>
+        <span class="folder-title">Design 2.0</span>
+      </div>
+      <span class="folder-count">7 items</span>
+    </div>
+    <div class="masonry-grid folder-grid" id="grid-design2">
+      <div class="masonry-item" data-category="design2"><img src="assets/photo1.jpg" alt="Design 2.0 1" /><div class="item-overlay"><span>Design 2.0</span></div></div>
+      <div class="masonry-item" data-category="design2"><img src="assets/photo2.jpg" alt="Design 2.0 2" /><div class="item-overlay"><span>Design 2.0</span></div></div>
+      <div class="masonry-item" data-category="design2"><img src="assets/photo3.jpg" alt="Design 2.0 3" /><div class="item-overlay"><span>Design 2.0</span></div></div>
+      <div class="masonry-item" data-category="design2"><img src="assets/photo4.jpg" alt="Design 2.0 4" /><div class="item-overlay"><span>Design 2.0</span></div></div>
+      <div class="masonry-item" data-category="design2"><img src="assets/photo5.jpg" alt="Design 2.0 5" /><div class="item-overlay"><span>Design 2.0</span></div></div>
+      <div class="masonry-item" data-category="design2"><img src="assets/photo6.jpg" alt="Design 2.0 6" /><div class="item-overlay"><span>Design 2.0</span></div></div>
+      <div class="masonry-item" data-category="design2"><img src="assets/photo7.jpg" alt="Design 2.0 7" /><div class="item-overlay"><span>Design 2.0</span></div></div>
+    </div>
+  </div>
+
+  <!-- FOLDER: Photograph -->
+  <div class="folder" data-folder="photograph">
+    <div class="folder-header" role="button" tabindex="0" aria-expanded="false">
+      <div class="folder-header-left">
+        <span class="folder-icon">▶</span>
+        <span class="folder-title">Photograph</span>
+      </div>
+      <span class="folder-count">19 items</span>
+    </div>
+    <div class="masonry-grid folder-grid" id="grid-photograph">
+      <div class="masonry-item" data-category="photograph"><img src="assets/pg1.jpg" alt="Photograph 1" /><div class="item-overlay"><span>Photograph</span></div></div>
+      <div class="masonry-item" data-category="photograph"><img src="assets/pg2.jpg" alt="Photograph 2" /><div class="item-overlay"><span>Photograph</span></div></div>
+      <div class="masonry-item" data-category="photograph"><img src="assets/pg3.jpg" alt="Photograph 3" /><div class="item-overlay"><span>Photograph</span></div></div>
+      <div class="masonry-item" data-category="photograph"><img src="assets/pg4.jpg" alt="Photograph 4" /><div class="item-overlay"><span>Photograph</span></div></div>
+      <div class="masonry-item" data-category="photograph"><img src="assets/pg5.jpg" alt="Photograph 5" /><div class="item-overlay"><span>Photograph</span></div></div>
+      <div class="masonry-item" data-category="photograph"><img src="assets/pg6.jpg" alt="Photograph 6" /><div class="item-overlay"><span>Photograph</span></div></div>
+      <div class="masonry-item" data-category="photograph"><img src="assets/pg7.jpg" alt="Photograph 7" /><div class="item-overlay"><span>Photograph</span></div></div>
+      <div class="masonry-item" data-category="photograph"><img src="assets/pg8.jpg" alt="Photograph 8" /><div class="item-overlay"><span>Photograph</span></div></div>
+      <div class="masonry-item" data-category="photograph"><img src="assets/pg9.jpg" alt="Photograph 9" /><div class="item-overlay"><span>Photograph</span></div></div>
+      <div class="masonry-item" data-category="photograph"><img src="assets/pg10.jpg" alt="Photograph 10" /><div class="item-overlay"><span>Photograph</span></div></div>
+      <div class="masonry-item" data-category="photograph"><img src="assets/pg11.jpg" alt="Photograph 11" /><div class="item-overlay"><span>Photograph</span></div></div>
+      <div class="masonry-item" data-category="photograph"><img src="assets/pg12.jpg" alt="Photograph 12" /><div class="item-overlay"><span>Photograph</span></div></div>
+      <div class="masonry-item" data-category="photograph"><img src="assets/pg13.jpg" alt="Photograph 13" /><div class="item-overlay"><span>Photograph</span></div></div>
+      <div class="masonry-item" data-category="photograph"><img src="assets/pg14.jpg" alt="Photograph 14" /><div class="item-overlay"><span>Photograph</span></div></div>
+      <div class="masonry-item" data-category="photograph"><img src="assets/pg15.jpg" alt="Photograph 15" /><div class="item-overlay"><span>Photograph</span></div></div>
+      <div class="masonry-item" data-category="photograph"><img src="assets/pg16.jpg" alt="Photograph 16" /><div class="item-overlay"><span>Photograph</span></div></div>
+      <div class="masonry-item" data-category="photograph"><img src="assets/pg17.jpg" alt="Photograph 17" /><div class="item-overlay"><span>Photograph</span></div></div>
+      <div class="masonry-item" data-category="photograph"><img src="assets/pg18.jpg" alt="Photograph 18" /><div class="item-overlay"><span>Photograph</span></div></div>
+      <div class="masonry-item" data-category="photograph"><img src="assets/pg19.jpg" alt="Photograph 19" /><div class="item-overlay"><span>Photograph</span></div></div>
+    </div>
+  </div>
+
+</div>
+
+    <section class="projects" id="projects">
+      <div class="projects-inner">
+        <p class="section-label">Projects</p>
+        <h2 class="section-title">Piece by piece.</h2>
+        <button class="project-btn" id="openProjectBtn" type="button" aria-haspopup="dialog" aria-controls="projectModal">BinPhotoGen</button>
+      </div>
+    </section>
+
+    <div class="project-modal" id="projectModal" role="dialog" aria-modal="true" aria-labelledby="projectModalTitle" aria-describedby="projectModalDesc">
+      <div class="project-modal-card">
+        <button class="project-modal-close" id="closeProjectBtn" type="button" aria-label="Close project preview">✕</button>
+        <div class="project-modal-body">
+          <div class="project-video-wrap">
+            <video id="projectVideo" autoplay muted playsinline loop preload="none"></video>
+          </div>
+          <div class="project-info">
+            <h3 class="project-name" id="projectModalTitle">BinPhotoGen</h3>
+            <p class="project-by">by Avfour</p>
+            <p class="project-description" id="projectModalDesc">This project allows users to upload an image and automatically generate binary code that precisely represents the uploaded image. The system converts visual data into binary format while maintaining its structure and detail. Users can then download the generated binary output for further use.</p>
+            <p class="project-date">build on May 12, 2026</p>
+            <button class="project-action-btn" id="projectActionBtn" type="button">Try Project</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+      <!-- LIGHTBOX -->
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image preview">
+      <button class="lb-close" id="lbClose" type="button" aria-label="Close lightbox">✕</button>
+      <button class="lb-arrow lb-prev" id="lbPrev" type="button" aria-label="Previous image">‹</button>
+      <button class="lb-arrow lb-next" id="lbNext" type="button" aria-label="Next image">›</button>
+      <div class="lb-main">
+        <img src="" alt="" id="lbImg" />
+      </div>
+      <div class="lb-thumbs" id="lbThumbs"></div>
+    </div>
+
+    <!-- SCROLL BUTTONS -->
+    <button class="scroll-btn" id="scrollTop" type="button" aria-label="Scroll to top">↑</button>
+    <button class="scroll-btn" id="scrollBottom" type="button" aria-label="Scroll to bottom">↓</button>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+      <p class="footer-name">Avfour</p>
+      <p class="footer-tagline">Documenting The Journey</p>
+      <div class="footer-socials">
+      <a href="https://instagram.com/aiiistheticsv4" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://tiktok.com/@aiiistheticsv4" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+      <a href="https://pinterest.com/aiiistheticsv4" target="_blank" rel="noopener noreferrer" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+      <a href="https://youtube.com/@aiiistheticsv4" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+      </div>
+      <p class="footer-username">@aiiistheticsv4</p>
+      <a href="https://mail.google.com/mail/?view=cm&to=aiiisthetodv1@gmail.com" target="_blank" rel="noopener noreferrer" class="footer-email" aria-label="Email Avfour">
+        <i class="fas fa-envelope"></i> aiiisthetodv1@gmail.com
+      </a>
+      <p class="footer-copy">© 2025 Avfour. All rights reserved.</p>
+    </footer>
+
+    <!-- CURSOR -->
+    <div class="cursor-dot" id="cursorDot"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
