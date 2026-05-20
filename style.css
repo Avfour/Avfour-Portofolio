@@ -1479,3 +1479,10 @@ body {
     padding: 1.8rem;
   }
 }
+
+.project-btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}

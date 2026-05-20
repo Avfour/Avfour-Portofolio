@@ -360,53 +360,83 @@ document.querySelectorAll('img[src*="assets/"]:not(.nav-logo-img):not(.about-pro
 });
 
 // PROJECT PREVIEW
-const openProjectBtn = document.getElementById('openProjectBtn');
+const projectData = {
+  binphotogen: {
+    title: 'BinPhotoGen',
+    description: 'This project allows users to upload an image and automatically generate binary code that precisely represents the uploaded image. The system converts visual data into binary format while maintaining its structure and detail. Users can then download the generated binary output for further use.',
+    date: 'build on May 12, 2026',
+    video: 'assets/binphotogen.webm',
+    link: 'https://avfour.github.io/BinPhotoGen/'
+  },
+  frierenxhimmel: {
+    title: 'Frieren x Himmel',
+    description: 'Frieren x Himmel is an immersive, front-end web project designed around a dynamic scroll-driven interactive UI/UX. Serving as a visual tribute to Frieren and Hero Himmel, the website utilizes advanced scroll animations and fluid transitions to guide users through their emotional journey and character history. Developed by avfour purely through precise prompting with Gemini, this project demonstrates the power of AI-assisted engineering in building complex, high-fidelity scroll effects that seamlessly blend cinematic storytelling with modern web interactivity.',
+    date: 'build on May 19, 2026',
+    video: 'assets/frierenxhimmel.webm',
+    link: 'https://avfour.github.io/Frieren-x-Himmel-Gemini/'
+  },
+  escoffier: {
+    title: 'Escoffier Delights',
+    description: 'Escoffier Delights is a culinary landing page project designed as a digital food product catalog. Inspired by the classic culinary world of Escoffier, this project transforms traditional themes into a modern visual experience that is friendly, vibrant, and light, thanks to its cartoonish art style. Adopting a semi-minimalist design approach, the page focuses on seamless user navigation, allowing visitors to browse the food product list effortlessly without being distracted by cluttered visual elements.',
+    date: 'build on May 14, 2026',
+    video: 'assets/escoffierdelights.webm',
+    link: 'https://avfour.github.io/Escoffier-Delights/'
+  }
+};
+
 const projectModal = document.getElementById('projectModal');
-const projectModalCard = document.querySelector('.project-modal-card');
+const projectModalCard = document.getElementById('projectModalCard');
 const closeProjectBtn = document.getElementById('closeProjectBtn');
 const projectVideo = document.getElementById('projectVideo');
 const projectActionBtn = document.getElementById('projectActionBtn');
 
-openProjectBtn.addEventListener('click', () => {
-  projectModal.classList.add('open');
-  projectModalCard.classList.remove('opened');
-  document.body.style.overflow = 'hidden';
-  openProjectBtn.classList.add('active');
-  projectVideo.src = 'assets/binphotogen.mp4';
-  projectVideo.muted = true;
-  setTimeout(() => {
-    projectModalCard.classList.add('opened');
-    projectVideo.play().catch(() => {
-      projectVideo.play();
-    });
-  }, 300);
+let currentProjectLink = '';
+
+document.querySelectorAll('.project-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const key = btn.dataset.project;
+    const data = projectData[key];
+    if (!data) return;
+
+    currentProjectLink = data.link;
+    document.getElementById('projectModalTitle').textContent = data.title;
+    document.getElementById('projectModalDesc').textContent = data.description;
+    document.getElementById('projectModalDate').textContent = data.date;
+
+    projectModal.classList.add('open');
+    projectModalCard.classList.remove('opened');
+    document.body.style.overflow = 'hidden';
+
+    projectVideo.src = data.video;
+    projectVideo.muted = true;
+
+    setTimeout(() => {
+      projectModalCard.classList.add('opened');
+      projectVideo.play().catch(() => {});
+    }, 300);
+  });
 });
 
 function closeProjectModal() {
   projectModal.classList.remove('open');
   projectModalCard.classList.remove('opened');
   document.body.style.overflow = 'auto';
-  openProjectBtn.classList.remove('active');
   projectVideo.pause();
   projectVideo.currentTime = 0;
   projectVideo.src = '';
 }
 
 closeProjectBtn.addEventListener('click', closeProjectModal);
-projectModal.addEventListener('click', (event) => {
-  if (event.target === projectModal) {
-    closeProjectModal();
-  }
+projectModal.addEventListener('click', (e) => {
+  if (e.target === projectModal) closeProjectModal();
 });
 
 projectActionBtn.addEventListener('click', () => {
-  window.open('https://s.id/binphotogen', '_blank', 'noopener noreferrer');
+  window.open(currentProjectLink, '_blank', 'noopener noreferrer');
 });
 
-document.addEventListener('keydown', (event) => {
-  if (event.key === 'Escape' && projectModal.classList.contains('open')) {
-    closeProjectModal();
-  }
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && projectModal.classList.contains('open')) closeProjectModal();
 });
 
 // SCROLL BUTTONS

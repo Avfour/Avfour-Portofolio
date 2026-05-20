@@ -11,7 +11,7 @@
   <meta property="og:image" content="assets/home-bg.jpg" />
   <meta property="og:image:alt" content="Avfour - Visual Creator Portfolio" />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://avfour.com" />
+  <meta property="og:url" content="https://avfour.github.io/Avfour-Portofolio/" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Avfour" />
   <meta name="twitter:description" content="Visual Creator from Indonesia | 16 Designs • 19 Photographs • 1 Project" />
@@ -92,7 +92,7 @@
           </div>
           <div class="hero-divider"></div>
           <div class="hero-stat">
-            <span class="stat-num">1</span>
+            <span class="stat-num">3</span>
             <span class="stat-label">Projects</span>
           </div>
         </div>
@@ -220,22 +220,26 @@
       <div class="projects-inner">
         <p class="section-label">Projects</p>
         <h2 class="section-title">Piece by piece.</h2>
-        <button class="project-btn" id="openProjectBtn" type="button" aria-haspopup="dialog" aria-controls="projectModal">BinPhotoGen</button>
+        <div class="project-btn-group">
+          <button class="project-btn" data-project="binphotogen" type="button">BinPhotoGen</button>
+          <button class="project-btn" data-project="frierenxhimmel" type="button">Frieren x Himmel</button>
+          <button class="project-btn" data-project="escoffier" type="button">Escoffier Delights</button>
+        </div>
       </div>
     </section>
 
-    <div class="project-modal" id="projectModal" role="dialog" aria-modal="true" aria-labelledby="projectModalTitle" aria-describedby="projectModalDesc">
-      <div class="project-modal-card">
-        <button class="project-modal-close" id="closeProjectBtn" type="button" aria-label="Close project preview">✕</button>
+    <div class="project-modal" id="projectModal" role="dialog" aria-modal="true">
+      <div class="project-modal-card" id="projectModalCard">
+        <button class="project-modal-close" id="closeProjectBtn" type="button">✕</button>
         <div class="project-modal-body">
           <div class="project-video-wrap">
             <video id="projectVideo" autoplay muted playsinline loop preload="none"></video>
           </div>
           <div class="project-info">
-            <h3 class="project-name" id="projectModalTitle">BinPhotoGen</h3>
+            <h3 class="project-name" id="projectModalTitle"></h3>
             <p class="project-by">by Avfour</p>
-            <p class="project-description" id="projectModalDesc">This project allows users to upload an image and automatically generate binary code that precisely represents the uploaded image. The system converts visual data into binary format while maintaining its structure and detail. Users can then download the generated binary output for further use.</p>
-            <p class="project-date">build on May 12, 2026</p>
+            <p class="project-description" id="projectModalDesc"></p>
+            <p class="project-date" id="projectModalDate"></p>
             <button class="project-action-btn" id="projectActionBtn" type="button">Try Project</button>
           </div>
         </div>
