@@ -233,6 +233,53 @@ document.querySelectorAll('.nav-links a').forEach(link => {
   });
 });
 
+const navHamburger = document.getElementById('navHamburger');
+const navDropdown = document.getElementById('navDropdown');
+
+navHamburger.addEventListener('click', (e) => {
+  e.stopPropagation();
+  navDropdown.classList.toggle('open');
+  navHamburger.classList.toggle('open');
+});
+
+document.addEventListener('click', () => {
+  navDropdown.classList.remove('open');
+  navHamburger.classList.remove('open');
+});
+
+navDropdown.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    navDropdown.classList.remove('open');
+  });
+});
+
+const navCollectionText = document.getElementById('navCollectionText');
+const navCollection = document.getElementById('navCollection');
+const collectionWord = 'COLLECTION';
+const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+let collectionInterval = null;
+
+navCollection.addEventListener('mouseenter', () => {
+  let iteration = 0;
+  clearInterval(collectionInterval);
+  collectionInterval = setInterval(() => {
+    navCollectionText.textContent = collectionWord
+      .split('')
+      .map((letter, i) => {
+        if (i < iteration) return collectionWord[i];
+        return chars[Math.floor(Math.random() * chars.length)];
+      })
+      .join('');
+    if (iteration >= collectionWord.length) clearInterval(collectionInterval);
+    iteration += 0.6;
+  }, 40);
+});
+
+navCollection.addEventListener('mouseleave', () => {
+  clearInterval(collectionInterval);
+  navCollectionText.textContent = '';
+});
+
 // LOGO SCROLL TO HOME
 document.querySelector('.nav-logo').addEventListener('click', () => {
   const hero = document.getElementById('hero');
